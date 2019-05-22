@@ -1,37 +1,5 @@
-## Welcome to GitHub Pages
+## 高效的秘密
+2019-5-22
+    掌控力激发动力，掌控力与自信心之间的关系，你是如何思考的？高效前提是动力，就行发动机一样。二，保持与专注。三、构建合理、高效的心智模式，包括预判性规划、想象性能力。只要坚持思考，就成功了一半。我们每天的生活中，80%以上的情况是重复性程序性的工作，缺乏突破性思考和规划，这是人怕折腾，怕思考，又想进步，又不想思考、不想努力。四、目标与延展目标，目标的分解与解构，目标重构和merge，达到目标的评价标准，你是如何设定评价标准和执行反馈手段的？我的一个信念是，each action should be recorded，每个动作都应该被记录，有了记录，然后才可能被分析，记录和分析，是反馈的手段。五、逆反情景假设，多多思考“如何不是这样呢？”，跳出现有的思考模式和框架，正在追求的目标是否合理，总之，要始终保持思考，“你错了吗”。六、寻找精益求精的敏捷思维。七、内驱力。八、把决策权交给能直接解决问题的人。多样化人才的选拔与评估。九、学点数学，利用贝叶斯法则解决概率问题。10、创新的本è´¨。把熟悉的元素变得不同，具备极其创造力的人，很多都是知识的中介，他们懂得在不同行业、领域、群体中传递知识。排序和组合，是创新的一种手段。第二种创新性，我认为是无中生有，就是一开始忘记现有的表象，从根基，从感觉中出发，捕捉那一点的不同和灵光。创新，就那一点点。创新并不是一次就完成，会存在一次两次多次，也可以推倒重来，世界上没有什么是固定的。11、数据的收集和分析。12、高效的秘密，还来自团队合作的秘密，如如何激发合作，如何有效管理他人。
 
-You can use the [editor on GitHub](https://github.com/lingkangjie/lingkangjie.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/lingkangjie/lingkangjie.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
