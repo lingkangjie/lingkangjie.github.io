@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/huxblog-boilerplate/img/favicon.ico">
+
+    <title>高效的秘密 - 我的博客</title>
+
+    <link rel="canonical" href="http://localhost:4000/huxblog-boilerplate/2019/05/22/mind/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/huxblog-boilerplate/">笔记集</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/huxblog-boilerplate/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/huxblog-boilerplate/img/post-bg-2015.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/huxblog-boilerplate/img/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/huxblog-boilerplate/tags/#思维" title="思维">思维</a>
+                        
+                    </div>
+                    <h1>高效的秘密</h1>
+                    
+                    
+                    <h2 class="subheading">揭开如何快速工作的秘密</h2>
+                    
+                    <span class="meta">Posted by Ling on May 22, 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<blockquote>
+  <p>“Yeah It’s on. ”</p>
+</blockquote>
+
+<h2 id="高效的原则">高效的原则</h2>
+
+<ul>
+  <li>掌控力激发动力，掌控力与自信心之间的关系，你是如何思考的？高效前提是动力，就行发动机一样。</li>
+  <li>保持与专注。</li>
+  <li>构建合理、高效的心智模式，包括预判性规划、想象性能力。只要坚持思考，就成功了一半。我们每天的生活中，80%以上的情况是重复性程序性的工作，缺乏突破性思考和规划，这是人怕折腾，怕思考，又想进步，又不想思考、不想努力。</li>
+  <li>目标与延展目标，目标的分解与解构，目标重构和merge，达到目标的评价标准，你是如何设定评价标准和执行反馈手段的？我的一个信念是，each action should be recorded，每个动作都应该被记录，有了记录，然后才可能被分析，记录和分析，是反馈的手段。</li>
+  <li>逆反情景假设，多多思考“如何不是这样呢？”，跳出现有的思考模式和框架，正在追求的目标是否合理，总之，要始终保持思考，“你错了吗”。</li>
+  <li>寻找精益求精的敏捷思维。</li>
+  <li>内驱力。</li>
+  <li>把决策权交给能直接解决问题的人。多样化人才的选拔与评估。</li>
+  <li>学点数学，利用贝叶斯法则解决概率问题。</li>
+  <li>创新的本质。把熟悉的元素变得不同，具备极其创造力的人，很多都是知识的中介，他们懂得在不同行业、领域、群体中传递知识。排序和组合，是创新的一种手段。第二种创新性，我认为是无中生有，就是一开始忘记现有的表象，从根基，从感觉中出发，捕捉那一点的不同和灵光。创新，就那一点点。创新并不是一次就完成，会存在一次两次多次，也可以推倒重来，世界上没有什么是固定的。</li>
+  <li>数据的收集和分析。</li>
+  <li>高效的秘密，还来自团队合作的秘密，如如何激发合作，如何有效管理他人。</li>
+</ul>
+
+<h2 id="决断力">决断力</h2>
+<ul>
+  <li>你是否觉察到自己的判断和决策中存在有“目光所及，便是一切”的“聚光效应”问题？</li>
+  <li>为什么决策需要流程？那是我们自身的缺点不足以规范我们思考和判断的过程。</li>
+  <li>利弊清单是比较原始的辅助决策的材料。</li>
+  <li>到底是什么阻止了你进行【有效】的决策？第一，思维的狭隘，意思是将选择局限在某个极小范围内，以二元化思维看待选择，A or B？第二，“证实倾向”，习惯性对某种情况迅速做出判断，潜意识中认为A 好过B，对某个东西，团队有好感。有时，我们认为某事件是真实的，而更加收集信息去支持这种判断，事后还庆幸自己做了一个理智的决策，这是非常糟糕的，自己屏蔽自己。证实性倾向决策，这种偏向性决策令我们快速适应做出决策，但却不一定是最优，甚至可能更糟糕。第三，短期的情绪。我们在决策时候，会混淆着情绪因素。</li>
+  <li>决策的流程中隐含着非优化因素：[a] 面临选择时，思维的狭隘限制了选择的范围。[b] 分析选项时，证实倾向使得你收集有利于自己的、当下认为“最好的选择”的信息。[c] 做出选择时，短期情绪令你常常做出错误判断。[d] 接受后果时，你对未来的走势估计太过自信。</li>
+  <li>针对上述问题[a]，如何避免思维的狭隘？1. 时刻提醒自己，不要专注与当前的选项。2. 考虑机会成本，假如我选择了这个，我会损失哪些？3. 考虑消失选项，假如这个、这些选项都没有了，你该如何做选择？4. 多目标追踪，尝试同时思考多个选择，但不是每个目标的权重都一样，是有区别的。警惕虚假选择：如何，核战，当前政策，或投降。5. 在选择后果中，积极在预防心态和促进心态转换。6. 争取两个都选，而不是“非此即彼”。我全都要，小孩子才做选择。7. 当选择太多了，感觉无法控制，那就去寻找已经帮你解决了问题的人。选项的来源，可以是来自事物的外部，也可以来自于事物的内部。将你精挑细选的选择编入决策的“问题列表”中。使用类比思维，来扩大选项。8.当你可以从丰富的选择中进行挑选时，你为什么非得自己提出自己的想法？懒惰不好吗？</li>
+  <li>针对上述问题[b]，如何避免证实性思维？把假设放在现实中去检验，实践是检验真理的唯一标准。a证实性思维让我们偏向考虑“好”的，那么，逆向思考，考虑相反情况如何？b多人合作决策，通过不同意见来抵消中和我们的证实偏向。c为了获得更多可靠的信息，我们可以反向问问题。d放大和缩小，缩小内视观点，放大外视观点，内视是在所处环境下，我们对齐评价。外视观点下，在这种情况下，事情是如何呈现的？通过特写，添加外视观点中缺少的内容。e尝试，可以小范围去验证我们的理论和猜想。</li>
+  <li>针对上述问题[c]，如何避免情绪掺杂？在做出决策之前，留出一段距离来思考。a如何克服短期情绪？常常有两种情绪左右我们决策，一是曝光效应：我们喜欢自己熟悉的东西。二是损失厌恶：损失使人痛苦，收益使人愉快，前者心理感受程度更为强烈些。b假设10分钟后，你对这个决定会有什么感觉？假如10个月后，你对这个决定有什么感觉？假如10年后，你对这个决定有什么感觉？通过拉长时间，克服短期紧张、害怕、恐惧，平衡情绪。c尊重你核心价值观。一个决策令人沮丧，可能是它常常与你的核心价值观发生了冲突。</li>
+  <li>针对上述问题[d]，做好出错的准备。a未来不是一点，我们针对错误的决策，评估它涉及的范围，对非常坏、到非常好的结果进行思考。b失败的原因是什么？对逆境和成功做出预期和准备。对于无法预见的结果，设置一个阈值，一个安全系数。c设置一个绊网，令我们清醒过来，重新思考这种作法，提供一个新认识，让我们有一个选择要做。</li>
+  <li>流程与决策。建立一套相对完备的信息收集、分析和决策流程，减少人为误差。</li>
+</ul>
+
+<h2 id="心智模式">心智模式</h2>
+<ul>
+  <li>（我想，引入图论与场论）在思考人的心时，有各种概念混杂，针对某特定场（模态，状态，场合），会有一组紧密联系的概念。但多个场中的概念会混杂。所以思考之所以混乱，是因为没有分清场，以及场和场之间的联系。例如“我想成功”，这个场，本身包含若干场。例如“如何做好一件事”，“如何发现局势、分析判断局势”，“我自身条件是什么”等等。“如何做好一件事”这个场又包含“如何发现问题，解决问题”等等，是当前问题的主要矛盾。“如何发现问题，解决问题”又是与“如何发现局势、分析判断局势”，“我自身条件是什么”相关，是它们各自的小矛盾（次要矛盾），但思考的某个阶段，又会变成主要矛盾。</li>
+  <li>所以场构成心智模式。</li>
+  <li>概念与联系构成场的基本元素，概念、联系与顺序构成一组动作，也就是原则，准则。意思是，“认为应该这样子去做”。所谓“行动的准则”，只不过的（概念+联系+顺序），而信念参与其中，影响联系的状态与哪些概念，什么顺序。</li>
+  <li>谈选择：价值观往往会导致选择，选择带有情感（痛苦+愉快）。选择掺杂感情假如重些，叫抉择。选择的对象有很多，例如现实，物质。</li>
+  <li>谈错误：错误不可避免。出现错误会影响人的情感。错误也是问题。</li>
+  <li>
+    <p>谈反思：反思是调整一切心智模式的根源。</p>
+  </li>
+  <li>
+    <p>谈成功：用以上小场，构成大场，成功 = 信心+现实（局势）+目标+发现问题解决问题。谈发现问题，能力包含洞察力，这个能力也是时局判断核心。解决问题：剖析问题，设计方案，落实步骤。若把成功看成是实践的典范，那么成功是理论与实践的主客体统一。事物的发展并不是一帆风顺的，错误在成功过程中，不可避免。</p>
+  </li>
+  <li>
+    <p>人的情感是若干种资源的表现，我想可以用一种情感模型来表述，一种心智模式如下
+<img src="/img/mind.jpg" alt="mind" /></p>
+  </li>
+  <li>情感和智能是两个不同东西，情感会影响智能，或许我们的机器并不需要情感。情感应该是一系列小资源的有机组合和表征，情感会抑制、或激活部分资源进而影响智能。那么人的价值观、目标、理想、信念以及三观等这些高级概念（超我）、乃至自我ego是在哪里？自我在于认识我是谁，是协调本我、超我之间的枢纽。我认为：本我是未经选择的资源表征，或者选择激活器对资源的抑制、激活不够。或者，所谓三我：本我、自我、超我，都是发生在“选择抽取与批评”与“选择激活”之间互动关系间。</li>
+  <li>Ps：我认为，人的智力是有限的，人能够认识这个世界，但认识不够完全，很多东西正由于人的智力存在缺陷导致我们反复、用其他概念去代替本质，“认识是螺旋上升的”，这种情况在人类面前，更加普遍和突出。人存在一种能够认识一切的能力，或许这种能力低级智能（如人类）存在，高级人类也存在，那么这种能力的下限在哪里？从神经元角度看，或者1400亿神经元超过人类（140亿），或许我们能够制造一种1400000…亿的智能体，该智能体也具有认识一切的能力。人们之所以不能提出一种意识模型，是因为人们受到意识颗粒度感知限制，例如我们可以感知快乐，却无法感知快乐的细微过程和快乐的构成。物质是如何有意识的？意识是否只有人类独有？是否万物都有意识？我认为，意识应该被认为的由多种小意识的有机构成，例如“念头”这个东西，并不纯正，存在很多同时，并行的念头。意识的基础是关系，那么，宇宙也有意识？人们使用很多概念去表征自己的意识和想法，其实这个描述并不精确。
+也许通过表征学习，例如数据，我们并不需要去解构意识的本质和结构。我把这种方法称为模拟意识。</li>
+  <li>人类应该有个“内在感知器和抽样器”能够对意识海进行感知和抽取。所谓“内在性错觉”好像答案已经存在似的，是因为感知器还没对意识海进行抽取，实际上意识已经存在，但还没被感知。我认为，可能“洞察力”就是那个“内在感知器和抽样器”。所谓的“自我”，可能就是内建感知器和抽样器的一种工作方式。</li>
+</ul>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2019/05/22/mind"
+                    data-title="高效的秘密"
+                    data-url="http://localhost:4000/huxblog-boilerplate/2019/05/22/mind/"
+                    data-images="http://localhost:4000/huxblog-boilerplate/img/post-bg-2015.jpg"
+                    data-content="
+  “Yeah It’s on. ”
+
+
+高效的原则
+
+
+  掌控力激发动力，掌控力与自信心之间的关系，你是如何思考的？高效前提是动力，就行发动机一样。... | 我的博客 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    
+                    <li class="next">
+                        <a href="/huxblog-boilerplate/2019/05/26/philosophy/" data-toggle="tooltip" data-placement="top" title="哲学">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2019/05/22/mind"
+                        data-title="高效的秘密"
+                        data-url="http://localhost:4000/huxblog-boilerplate/2019/05/22/mind/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Deep Learning" title="Deep Learning" rel="2">
+                                    Deep Learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Machine Learning" title="Machine Learning" rel="2">
+                                    Machine Learning
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                    
+                        <li><a href="#">Foo</a></li>
+                    
+                        <li><a href="#">Bar</a></li>
+                    
+                        <li><a href="#">Example Friends</a></li>
+                    
+                        <li><a href="#">It helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'huxblog';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 笔记集 2019
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/huxblog-boilerplate/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/huxblog-boilerplate/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/huxblog-boilerplate/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

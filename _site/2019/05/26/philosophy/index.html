@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/huxblog-boilerplate/img/favicon.ico">
+
+    <title>哲学 - 我的博客</title>
+
+    <link rel="canonical" href="http://localhost:4000/huxblog-boilerplate/2019/05/26/philosophy/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/huxblog-boilerplate/">笔记集</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/huxblog-boilerplate/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/huxblog-boilerplate/img/post-bg-2015.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/huxblog-boilerplate/img/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/huxblog-boilerplate/tags/#哲学" title="哲学">哲学</a>
+                        
+                    </div>
+                    <h1>哲学</h1>
+                    
+                    
+                    <h2 class="subheading">儒释道</h2>
+                    
+                    <span class="meta">Posted by Ling on May 26, 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h2 id="金刚经论文集注">金刚经论文集注</h2>
+
+<p>金刚经中常见的主题：修行、空、经、心、生命、时间、空间。何为“虚空”？“虚而无形质，空而无障碍，故名虚空”，虚空具有周遍、不动、无尽、永恒的属性，包括上下、东南西北（四方）、东南、西南、东北、西北（四维）共10个方向。虚空并非空无一物，而是包含着无数的“微尘”和“世界”。“三千大千世界所有微尘”，“以三千大千世界碎为微尘”，虚空中包含无数的微尘，微尘组成世界，世界又可碎为微尘。世界，世指时间，界指空间，世界又可称为世间，“世”有流变之义，“间”有间隔之义。时间流逝有两个版本，一个是时间的流逝是时间从未来向自我的移动，称为“时间移动”，另一个版本是时间的流逝是自我从过去向未来的移动，称为“自我的移动”。心经中常见“时间移动”。“初日分以恒河沙等身布施…”，这里可以体现了“时间的持续是空间的长度”，一个世界从成到消亡，经历了成、住、坏、空四个阶段组成一个劫。时间是无止境的循环。时间的流逝是时间从未来朝向我的移动。生命与时间具有恒等性，先（前）世-今世-后世反映了时间的流动，继承了时间的循坏性。生命以某种物质形式来承载每个生命，不同的世可能具有不同的生命形式，正如三恶道、三善道，六道轮回。六道：天、人、阿修罗、畜生、恶鬼、地狱。“堕额道”说明了有方向，暗示着善道居高位、恶道居低处，与好的是上、坏的是下基本方位隐喻一致。</p>
+
+<p>“无住”思想阐述。佛法就是要解决心的问题，金刚经以无住为宗，正显般若智用之相貌。“无住”并非真无住，“无住者，非无所住也，乃不着于住也”，不是无所住，而是当住于佛法真理，佛身不执于物，心不滞于物。“所谓佛法者”，“如来所说三十二相”，佛法本难以言传，佛祖为了拯救众生而说不可说之法，如此无上妙法，难以用文字表达，倘若执滞于文字言传，终不能登堂入室，见识大雅，故用此话来告诫众生，不要拘泥于文字，也是“无住”一种思想表现。无住，非无住也，无住错误的真理，当身趋堂室，窥见大宝，随后因住也，而不当住于文字言传。观察佛祖金刚经中的日常行为，“尔时世尊食时，…，敷座而坐”，日常的衣食住行表现了性空即缘起，缘起即性空的中道，不有附住之心，人生苦的根源来自于世俗生活，“其实微尘世界，皆无自性，非有实体，众生执有，抟取色身，假立一合相，但不过影像而已”，不住声香味触发，行为亦无住也。</p>
+
+<h2 id="厚黑学">《厚黑学》</h2>
+<h3 id="缘起">缘起</h3>
+<p>人生而自由，而无时无刻不在枷锁中。人受到环境、教育的潜移默化，行为受到束缚。人生即是竞争和生存，竞争就必有谋略，厚黑学是谋略中的一种。该书中以下8个方面进行说明如何厚黑：人性弱点、进退有方、做事为人、小人之智、立身行世、待人处世、求人办事、成败铁规。</p>
+
+<h3 id="分体内容">分体内容</h3>
+<ul>
+  <li>厚黑，是从另一个角度去思考人性与方法。文人说话文绉绉，实属不适合理科生思维。咬文嚼字，这也行，那也行，方案如此众多，思考角度之繁杂，实属不适合理科生思维。尽管如此，我还是能够提炼出一些观点和notes。</li>
+  <li>我持有怀疑和吸收态度阅读这本《厚黑学》，对其中一些观点批判性吸纳，总和过去阅读积累，将这本书变薄，提纲挈领，各种林林总总，化为结构性思维。书中上至三皇五帝，下至民国初期，时间跨度之大、人物之繁多，背后其故事缘由，常人难以一窥，更难进行深度分析。孔孟学说、王阳明心学、刘曹谋略，滔滔如也，文字背后，缺乏一般性原理分析，更多是集中在某个特定时空事件下管中一窥。作者认为人性从上古到今天，经历了，素而实，华而不实，华而又实三个阶段，如今正处在第二阶段。作者把过往圣人、能者的成功的原因归为厚黑，难免不牵强附会也。一家之言，百家争相注释，厚黑之至，正如宗吾作者。厚黑的三大境界：厚如城墙、黑如煤炭，厚而硬、黑而亮，厚而无形、黑而无色。古今圣贤，能人志士，苟有事成，厚黑或是一个原因。</li>
+  <li>求官，求人办事妙法：空、贡、冲、捧、恐、送。空指空间上，空闲自己手头其他事，一心一意求。时间上，一次不行，第二次接着，今日不成，明日继续。贡指钻营，有孔必钻，无孔也制造孔，无孔也要钻。冲，吹牛，新闻舆论，在口头上能说会道，文字上善于营造新闻舆论氛围。捧，捧场，拍马屁。恐，恐吓之义，既然捧一个人，也给点他警醒，俗称把柄，捧+恐，一杨一抑，恐亦有度，亦有分寸。送，送东西，按照价值分大送，小送。做官，待人处事：空、恭、绷、凶、聋、弄。空指文字、批文玄妙，办事上看似雷厉风行，实际暗含退路，根本原则是绝不把自己牵连。恭，一恭上司，二恭上司亲戚朋友等与之相关的人物。绷，指仪表上赫然大人物，凛然不可侵犯。谁给权力，对谁就恭，反之则可绷，恭之不一定是上司，绷之也不一定是下属、百姓。凶，指行事看似有道德仁义，实际上只要达到自己目的，不必拘泥道德仁义也，但一定要装饰道德仁义。聋，有些事瞎子好，聋子好。有些文字诋骂，闭眼不看。弄，弄钱之义。</li>
+  <li>办事二法：锯箭法、补锅法。锯箭法，只做自己该做的，不以解决最终问题（医好人）为导向，相互推诿，只做自己的，我认为在程序化办事上，锯箭法是不可避免的，因为前者的结果，是后者的输入，唯一解决办法是顶层重新设计，把功能集中，减少低强度的operations的分散度。补锅法阐述了，为了突出自己的地位和不可替代性，把原始工作破坏，然后让自己再重新修补，有种权弄之义。我认为，这个问题的根本原因是，把太多功能的实现集中在一个客体上，恰好是锯箭法的反方向。锯箭法和补锅法，恰好是一对矛盾。上述思考是站在管理者角度上，站在个人角度上，通过锯箭法可以把责任推得一干二净，而又可以做完事，不受到谴责，通过补锅法，突出自己的价值，或者获取更多的价值（当前某些医院就有这个现象）。</li>
+  <li>所有的厚黑之法，务必糊上一层仁义道德，而且要有“名”，重视言正名顺，师出有名。</li>
+  <li>厚黑，也可以理解，厚指厚道，黑就是指代那种黑。一正一歪，一阳一阴，一正一奇，符合道家之万物相生相克之道，正奇相生，循环无端，厚中有黑，黑中有厚，为人做事确实如此也。</li>
+  <li>厚黑之法，千年未曾有系统性公布，却无时无刻被人们使用，或多或少。每个人都曾受到厚黑之法的影响。这是一种未曾被发掘的东西，却潜伏于文学、权谋、人与人沟通之中。宗吾通过他的认识，归纳总结厚黑之法，认为“这样”，“那样”的做法比较符合厚黑之道也。宗吾观二十四史，成败兴衰，潇潇洒洒几万字，上至文王勾践，夫子孟子，下达今外蛮夷列强，认为厚黑救国。我想，厚黑救不了国，科技才立国，民众尔虞我诈，上下不一心，国危矣！文人易误国，蛊惑视听，巧言令色，不可不防。古之治国，有两法，德治，法治，秦国焚书坑儒，就是想统一思想领域。秦国武治，强势之至，国强民富，至于暴戾乖张，则国蹦民卒。文武之治，方是正道。如今全球科技停滞不前，二十世纪两大重大发现，相对论和量子力学，带来的科技福利，逐渐消磨殆尽，国与国之间，为了争夺微薄应用性价值，大举贸易和军事大棒，厚黑救不了国，当前重要是真正重视科技创新，底层科学和技术的进步，独立自主，上下一心。历史上救国的，从不是歪门邪道，而是正远远大于邪。厚黑可防身，但毕竟只是一种系统性方法，不可仅为依赖。</li>
+  <li>心力论，在相对论中，光受到引力的影响，而弯曲，人心理也一样，受到心力影响，也产生颠倒之想。正所谓圆觉经中阐述，一切众生，无始以来，种种颠倒，妄认四大为自身相，六尘缘影为自心相。人性无本是善恶，是可以为善，可以为恶，王阳明言，性，心之体也，情，心之用也。</li>
+  <li>如何读书？以古为敌，读书，例如读古书，寻找他的缝隙，见缝插针，针锋相对，又假设他反驳，如此反复，愈攻愈深，如此读书，便可入理八分。以书为友，相互切磋，吸收书中优秀观点和理论方法。以书为徒，前人写的书，学识肤浅，总有提高地方，如阅读学生文字一样，批评其不对，知识是否在我之上？是也，认为遇到强敌，攻之。否也，批评之。</li>
+  <li>讲到厚黑学，根本离不开人性善恶论。人心最难理解，孟子认为人善，荀子认为人恶论，在我看，他们都在争论性之初，无法确定性之当前状态。乃至宗吾认为，人无善恶之分。我更倾向于与其争论之初，不如确定当前的状态为好，从MCMC和蒙特卡罗模拟方法看，只要抽样次数足够多，系统的最终状态和初始状态无关。我们除了研究人性，还要注意研究人的兽性。</li>
+  <li>宗吾所著的厚黑学，离不开孔孟之说，儒释道三家的思想，在整本书中，考之中外，恢诡谲怪，举莫能外，文字潇潇洒洒，对习惯快、准、直思维的理科人士而言，实属大块头。尽管如此，我把其中觉得有用的东西进行了提纲挈领，认为大体上不失一般性，至于艰涩灰暗的文字，历史典故，如何林林立立，唯交给文人了。</li>
+</ul>
+
+<h2 id="论存在与虚无">论存在与虚无</h2>
+<p>论存在与表象。二元论观点把存在与表象放在一起，认为存在即有表象，对立起来，相信本体，实际上我们有一种方法可以破相。显现（就是表象的显露过程）本身没有表明存在，例如力这个“本体”可以通过各种现象来显现，但它只是这些效应的总体，一个系列的显现，它背后没有什么东西，只是表明力它自己和整个系列。存在这个概念，可以认为是显像的显像。使用存在这个概念，其实只是为了方便说明。从这个角度思考，显像并没有掩盖本质，显像就是本质，也不是本质（从有限无限二元论来思考，等下讲）。破除这个二元论，并没有意味着就统一为一元论，实际上，应该称为有限/无限二元论。例如，看到杯子，我们常常认为，它就在那里，不是我的，这种想法表明杯子的实在性。也是表象论的想法。杯子的显现是一种不以人们好恶意志转移的，但这种显现为无限（就是无限视角观察）。所以杯子的存在，是一种以无限二元论思考。当杯子以有限视角观察，还原为单一个体，就变成一种充实直观的东西了。所以说有限的显现是在它自身有限性中表明，称为“有限显现”；当它要求超越有限性走向无限，显示出一个系列，从无限视角观察，不仅仅是一个sample，是“有限中的无限”。杯子有超越它自身存在的潜能，去显现整个系列，但也有它局限性：它只是现象的一个侧面，无限中的有限。本质是什么？从二元论角度看，本质和实体密切相关，从上面论证来看，存在既然是不存在的，只是一个个显现，本质本应该的用个别显露物去表露无限显露物。从这个角度思考，本质无法触及，第一本质根本不存在，第二，我们没有无限的samples去表露。再深入点，现象它自身是存在吗？我们认为显现只是表露它自身和整个系列，只能被它自身存在，从而我们能将显现和存在剥离，显现的本质就是不再和任何存在对立的“显现”。既然剥离了显现和存在（硬核的）关系，那么显现存在吗？（或说显现是硬核的吗？这个问题后面再说，我们先说存在和现象关系）</p>
+
+<p>我们认为，存在的现象，不足以揭示现象的存在。这里的“存在”和上面的存在一样，都是不存在的，只是为了方便说明和形象，特意造了一个实体。存在自身会散发出现象，因此有了一种“存在的现象”（这里我们先假设现象存在）。但这种存在的现象（显现），它真的能够揭露或它的本性真的与向我展现的存在物的存在一样吗？就是说存在的现象，真的能够揭示现象的存在吗？具体来讲，我们看到红色的花，真的能够认识红色吗？红色为存在的现象，不足以揭示现象（前面我们认为存在也是一种现象，从无限视角观察，这里的现象指红色的本体）的存在。所以说本质不在实体中（红色这个概念，不在红色的花里面）。现在我们讨论对象与存在关系，具体来讲，红色的花这个对象存在（存在红色）不？对象既不揭露存在（红色的花无法揭露红色），但也不掩盖存在（抛开红色的花去谈红色也是不行）。所以说本质不在对象中，而是对象的意义。那么，本质和存在是什么关系呢？如果我们认为，存在只是揭示本质的条件，但（现象的）存在却无法转发为存在的现象，而我们又想通过考察存在的现象对本质说点什么，这就是矛盾了。但实际上我们确实能够通过存在的现象对存在说点什么（海德格尔本体状-本体论的），为了统一，只要我们思考一下，不把存在看成揭示对象本质的条件，而是看成概念，就和我们前面讲的“存在的现象，不足以揭示现象的存在”吻合（同时也意味着，存在只是一个概念，从二元视角看，就解释了为什么一千个人眼中有一千个哈姆雷特。我想。）</p>
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2019/05/26/philosophy"
+                    data-title="哲学"
+                    data-url="http://localhost:4000/huxblog-boilerplate/2019/05/26/philosophy/"
+                    data-images="http://localhost:4000/huxblog-boilerplate/img/post-bg-2015.jpg"
+                    data-content="金刚经论文集注
+
+金刚经中常见的主题：修行、空、经、心、生命、时间、空间。何为“虚空”？“虚而无形质，空而无障碍，故名虚空”，虚空具有周遍、不动、无尽、永... | 我的博客 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/huxblog-boilerplate/2019/05/22/mind/" data-toggle="tooltip" data-placement="top" title="高效的秘密">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                    <li class="next">
+                        <a href="/huxblog-boilerplate/2019/05/28/survey-of-OD/" data-toggle="tooltip" data-placement="top" title="Notes for A Survey of Object detection">Next Post &rarr;</a>
+                    </li>
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2019/05/26/philosophy"
+                        data-title="哲学"
+                        data-url="http://localhost:4000/huxblog-boilerplate/2019/05/26/philosophy/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Deep Learning" title="Deep Learning" rel="2">
+                                    Deep Learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Machine Learning" title="Machine Learning" rel="2">
+                                    Machine Learning
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                    
+                        <li><a href="#">Foo</a></li>
+                    
+                        <li><a href="#">Bar</a></li>
+                    
+                        <li><a href="#">Example Friends</a></li>
+                    
+                        <li><a href="#">It helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'huxblog';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 笔记集 2019
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/huxblog-boilerplate/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/huxblog-boilerplate/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/huxblog-boilerplate/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/huxblog-boilerplate/img/favicon.ico">
+
+    <title>Linux Command Line - 我的博客</title>
+
+    <link rel="canonical" href="http://localhost:4000/huxblog-boilerplate/2019/06/03/Linux-Command-Line/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/hux-blog.min.css">
+
+    <!-- Pygments Github CSS -->
+    <link rel="stylesheet" href="/huxblog-boilerplate/css/syntax.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Hux change font-awesome CDN to qiniu -->
+    <link href="http://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- Hux Delete, sad but pending in China
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/
+    css'>
+    -->
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+    <script></script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/huxblog-boilerplate/">笔记集</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <!-- Known Issue, found by Hux:
+            <nav>'s height woule be hold on by its content.
+            so, when navbar scale out, the <nav> will cover tags.
+            also mask any touch event of tags, unfortunately.
+        -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/huxblog-boilerplate/">Home</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/about/">About</a>
+                    </li>
+                    
+                    <li>
+                        <a href="/huxblog-boilerplate/tags/">Tags</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    $toggle.addEventListener('click', handleMagic)
+    function handleMagic(e){
+        if ($navbar.className.indexOf('in') > 0) {
+        // CLOSE
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        }else{
+        // OPEN
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/huxblog-boilerplate/img/post-bg-2015.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/huxblog-boilerplate/img/post-bg-2015.jpg')
+    }
+</style>
+<header class="intro-header" >
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                        <a class="tag" href="/huxblog-boilerplate/tags/#Linux" title="Linux">Linux</a>
+                        
+                    </div>
+                    <h1>Linux Command Line</h1>
+                    
+                    
+                    <h2 class="subheading"></h2>
+                    
+                    <span class="meta">Posted by Ling on June 3, 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+				<h1 id="basic-commands">basic commands</h1>
+<ul>
+  <li>$ date, cal(calender), df (current amount of free space on disk driver), free (free memory)</li>
+  <li>ls, -l use a long listing format, -t sort the result by file’s modification time, –reverse -r reverse the results, -S sort results by file size, -h human readable.</li>
+  <li>$ file, determining the file’s type. $ less, viewing the file contents with less.</li>
+  <li>$ cp, -i –interactive prompt before overwrite, -r –recursive, -u –update copy only when the SOURCE file is newer than the distination file or when the destination file sis missing. -v –verbose, display copy information.</li>
+  <li>$mv file1 file2 dir1 move file1 and file2 to dir1.</li>
+  <li>$rm -i –interactive, -v –verbose, usage just like above.</li>
+  <li>change stander output using &gt;, such as $ls -l &gt; tmp.txt. Using » to append new output, such as $ls -l /usr/bin » tmp.txt.</li>
+  <li>redirecting standard error to a file:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ ls -l /bin/usr 2&gt; ls-error.txt
+</code></pre></div>    </div>
+    <p>When <code class="highlighter-rouge">$ less ls-error.txt</code>, ouput <code class="highlighter-rouge">ls: cannot access '/bin/usr': No such file or directory</code>.
+Here file discriptor, 1, 2, 3 is represented standard input, standard ouput, standard error, respectively. The descriptor 2 is placed immediately befor the redirection operator &gt;.</p>
+  </li>
+  <li>
+    <p>redirecting standard input and standard error to one file. Append method: <code class="highlighter-rouge">$ls -l /bin/usr &gt;&gt; ls-error.txt 2&gt;&amp;1</code>. First, we redirect standard output to file ls-error.txt and then we redirect file descriptor 2 (standard error) to file descriptor 1 (standard output) using the notation 2&gt;&amp;1. Notice that the order of the redirections is significant. The redirection of standard error must occur <em>after</em> redirecting output or it does not work.</p>
+  </li>
+  <li>
+    <p>Using <code class="highlighter-rouge">&amp;&gt;</code> to redirect both standard output and standard error to file. <code class="highlighter-rouge">$ls -l /bin/usr &amp;&gt;&gt; ls-error.txt</code>.</p>
+  </li>
+  <li>
+    <p>$cat, changing the standard input. Display file: $cat filename. Concatenate files together: $cat file1 file2 &gt; merged-files. Read inputs from standard Input IO to files: $cat &gt; tmp.txt (use ctrl + d to tell <em>cat</em> that it has reached end of file (EOF).</p>
+  </li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Pipelines. The difference between &gt; and</td>
+          <td>: one connects a command with file with file, other connects a command with a command, command1 &gt; file1, command1</td>
+          <td>command2.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">$ls /bin /usr/bin | sort | uniq -d | less</code>, use uniq to remove any duplicates from the output of sort command, use -d to see the list of duplicates instead.</p>
+  </li>
+  <li>wc, word count, used to display the number of lines, words, and bytes contained in files, -l limits its output to only report lines.<code class="highlighter-rouge">$ls /bin /usr/bin | sort | uniq | wc -l</code></li>
+  <li>grep, print lines matching a pattern. grep pattern [file…].</li>
+  <li>tail, head, print end/first part of files, such as head -n 10, prints first 10 lines.</li>
+  <li>tee, read from standard input and write to standard output and files, it is useful for capturing a pipeline’ contents at an intermediate stage of processing, <code class="highlighter-rouge">$ls /usr/bin | tee ls.txt | grep zip</code>, capture the standard output of ls to ls.txt before grep filters the pipeline’s contents.</li>
+  <li>Brace expansion:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lkj@lkj:~/tmp/Notes$ echo N_{001..11}
+N_001 N_002 N_003 N_004 N_005 N_006 N_007 N_008 N_009 N_010 N_011
+lkj@lkj:~/tmp/Notes$ echo {Z..A}
+Z Y X W V U T S R Q P O N M L K J I H G F E D C B A
+lkj@lkj:~/tmp/Notes$ echo a{A{1,2},B{3,4}}b
+aA1b aA2b aB3b aB4b
+</code></pre></div>    </div>
+  </li>
+  <li>Command Substitution, allows us to use the output of a command as an expansion. <code class="highlighter-rouge">$ file $(ls -d /usr/bin/* | grep zip)</code>, means after <em>grep</em> filters, <em>file</em> the results.</li>
+  <li>Move cursor around, as I use tmux and xshell at the same time, I find that <code class="highlighter-rouge">ctrl +a</code>(move cursor to the beginning of the line), <code class="highlighter-rouge">ctrl+e</code> (move the cursor to end end of the line), <code class="highlighter-rouge">ctrl + k</code>(kill text from the cursor location to the end of line), <code class="highlighter-rouge">ctrl+u</code>(kill text from the cursor location to the beginning of the line), <code class="highlighter-rouge">ctrl+f</code> (the same as right arrow key), <code class="highlighter-rouge">ctrl+b</code> (conflicts with tmux ctrl+b, but still works alternately)  work.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>History. Search history: $history</td>
+          <td>grep /usr/bin. When we get the line number of the command in the history list, we can execute it by <code class="highlighter-rouge">!number</code>, e.g. <code class="highlighter-rouge">!80</code>. Search history in reverse: first <code class="highlighter-rouge">ctrl+r</code> to enter the reverse search env, then type the contents you want to search, such <code class="highlighter-rouge">/usr/bin</code>, use <code class="highlighter-rouge">ctrl+j</code> to copy the command to our current command line for futher editing or execute. <code class="highlighter-rouge">ctrl+p</code>, move to previous history entry. <code class="highlighter-rouge">ctrl+n</code>, move the next history entry. <code class="highlighter-rouge">!!</code> repeat the last command.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+  <li>file property.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxr-xr-x 12 lkj lkj    4096 May 26 18:21 ..
+-rw-rw-r--  1 lkj lkj       0 May 26 19:15 foo.txt
+</code></pre></div>    </div>
+    <p>- : a regular file, d : directory, l : symbolic link, and the remaining file attributes are always “rwxrwxrwx”, c : character file, b : block special file.</p>
+  </li>
+</ul>
+
+<p>“rwx(Owner) rwx(group) rwx(world, everybody else)”, <code class="highlighter-rouge">r</code> allows file to be opened and read, <code class="highlighter-rouge">w</code> allows to written to or truncated, <code class="highlighter-rouge">x</code> allows to be treated as a program and executed.</p>
+<ul>
+  <li>chmod, change file mode, e.g., <code class="highlighter-rouge">$chmod 600 foo.txt</code>, <code class="highlighter-rouge">$chmod 777 foo.txt</code>. Another way, u, g, o, a represent short for user, short for owner, short for others or world or everybody else, short for all. +, - represent add, minus attributes. r, w, x represent attributes. e.g., <code class="highlighter-rouge">u+x</code> add execute permission for the owner, <code class="highlighter-rouge">u-x</code> remove execute permission from the owner, <code class="highlighter-rouge">+x</code> as the same as <code class="highlighter-rouge">a+x</code> add execute permission for owner, group, world.</li>
+  <li>chown, change file owner and grop. chgrp, change group ownership. passwd [user], change your password.</li>
+  <li>By default, <code class="highlighter-rouge">ps</code> only show the processes associated with the current terminal seesion, tty(short for teletype, refers to controlling terminal). <code class="highlighter-rouge">ps x</code> will show all processes.</li>
+  <li>top
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>top - 19:47:36 up  1:27,  4 users,  load average: 0.07, 0.09, 0.09
+Tasks: 317 total,   1 running, 226 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.5 us,  0.8 sy,  0.0 ni, 98.1 id,  0.5 wa,  0.0 hi,  0.0 si,  0.0 st
+</code></pre></div>    </div>
+    <p><code class="highlighter-rouge">top</code> the name of the program. <code class="highlighter-rouge">up 1:27</code> the machine was running 1 hour and 27 minutes. <code class="highlighter-rouge">load avergae</code>, the number of processes that are in a runnable state and are sharing the CPU, the first is average for last 60 seconds, next is previous 5 minutes, next is previous 15 minutes, values less than 1.0 indicate that the machine is not busy. <code class="highlighter-rouge">0.5 us</code> 0.5% of CPU is being used for <strong>user processes</strong>, <code class="highlighter-rouge">0.8 sy</code> 0.8% of CPU is being used for <strong>system(kernel)</strong> processes, <code class="highlighter-rouge">0.0 ni</code> 0.0% of CPU is being used by “nice”(low-priority) processes. <code class="highlighter-rouge">98.3 id</code> 98.3% of CPU is idle. <code class="highlighter-rouge">0.5 wa</code> 0.5% of CPU is waiting for I/O.</p>
+  </li>
+  <li>The most importance startup file <code class="highlighter-rouge">~/.bashrc</code> for Non-Login Shell Session, it is always read.</li>
+  <li>export, set export attribute for shell variables, that is to say update $Variable. e.g. <code class="highlighter-rouge">$ PATH=$PATH:$HOME/bin</code>, and then update $PATH by <code class="highlighter-rouge">export PATH</code>.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lkj@lkj:~/tmp/Notes$ foo="ok"
+lkj@lkj:~/tmp/Notes$ foo=$foo:$HOME/data
+lkj@lkj:~/tmp/Notes$ echo $foo
+ok:/home/lkj/data
+</code></pre></div>    </div>
+  </li>
+  <li>Which files should we modify for establishing environment? To add directories to your <em>PATH</em> of define additional environment variables, place those changes in <strong>.bash_profile</strong>( or <strong>.profile</strong> in Ubuntu). For everything else, place the changes in <strong>.bashrc</strong>.</li>
+  <li>In Nano editor, ^ means Ctrl, such as, ^X means Ctrl-x.</li>
+  <li>cat -A filename, -A show all. -n show number lines, -s suppress the output of multiple blank lines.</li>
+  <li><code class="highlighter-rouge">ls -l /usr/bin | sort -nrk 5 | head</code>, -n preform sorting based on the numeric evaluation of a sting, using this option allows sorting to be performed on numeric values rather than alphabetic values. -r –reverse. -k –key=field1[,field2], sort based on a key field located from field1 to field2 rather than the ectire line.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lkj@lkj:~/tmp/Notes$ ls -l /usr/bin | sort -nrk 5 | head
+-rwxr-xr-x 1 root root    79780856 Jan 24 18:49 dockerd
+-rwxr-xr-x 1 root root    38199680 Jan 24 18:49 docker
+-rwxr-xr-x 1 root root    38158448 Jan 24 18:49 docker-containerd
+-rwxr-xr-x 1 root root    20919664 Jan 24 18:49 docker-containerd-ctr
+-rwxr-xr-x 1 root root    14924104 Mar 12  2018 doxygen
+-rwxr-xr-x 1 root root    12849608 Jan 30 01:50 snap
+-rwxr-xr-x 1 root root    11661624 Jan 24 18:49 docker-runc
+-rwxr-xr-x 1 root root     9074600 Jan 30 01:50 snapctl
+-rwxr-xr-x 1 root root     7602672 Apr  9  2018 gdb
+-rwxr-xr-x 1 root root     6444464 Apr 24  2018 ctest
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="wildcard-and-regular-expressions">wildcard and regular expressions</h1>
+<ul>
+  <li>* matches any characters</li>
+  <li>? matches any single character</li>
+  <li>[characters] matches any character that is member of the set <strong>characters</strong></li>
+  <li>[!characters]</li>
+  <li>[[:class:]] matches any character that is a member of specifiled class.</li>
+  <li>[:alnum:] matches any alphanumeric character, equivalent to [A-Za-z0-9]. [:word:], the same as [:alnum:], with the addition of underscore(_) character. [:alpha:] matches any alphabetic character. [:digit:] matches any numeral. [:lower:] lowercase. [:upper:] uppercase. [:blank:], includes the space and tab characters.</li>
+  <li>[[:upper:]]* any file beginning with an uppercase letter.</li>
+  <li>*[[:lower:]123] any file ending with lowercase letter or the numerals 1 2 3.</li>
+  <li>$grep [options] regex [file…]. <code class="highlighter-rouge">options</code>, -i –ignore-case, ignore uppercase and lowercase characters. -v –invert-match, -c –count print the number of matches instead of the lines themselves. -l –file-with-matches print the name of each file that contains a match instead of the lines themselves. -L –file-without-match. -n –line-number, prefix each matching line with the number of the line within the file. -h –no-filename, for multi-file searchs, suppress the output of filenames.
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ grep -h '.zip' dirlist-*.txt (any character)
+$ grep -h '^zip' dirlist-*.txt (beginning of the line)
+$ grep -h 'zip$' dirlist-*.txt (end of the line)
+$ grep -n '^$' dirlist-*.txt (will match blank lines)
+$ grep -h '^[A-Za-z0-9]' dirlist-*.txt
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+
+
+                <hr>
+
+                
+                <!-- 多说 Share start -->
+                </style>
+                <div class="ds-share"
+                    style="text-align: right"
+                    data-thread-key="/2019/06/03/Linux-Command-Line"
+                    data-title="Linux Command Line"
+                    data-url="http://localhost:4000/huxblog-boilerplate/2019/06/03/Linux-Command-Line/"
+                    data-images="http://localhost:4000/huxblog-boilerplate/img/post-bg-2015.jpg"
+                    data-content="basic commands
+
+  $ date, cal(calender), df (current amount of free space on ... | 我的博客 " >
+                    <div class="ds-share-inline">
+                      <ul  class="ds-share-icons-16">
+                        <li data-toggle="ds-share-icons-more"><a class="ds-more" href="#">分享到：</a></li>
+                        <li><a class="ds-wechat flat" href="javascript:void(0);" data-service="wechat">微信</a></li>
+                        <li><a class="ds-weibo flat" href="javascript:void(0);" data-service="weibo">微博</a></li>
+                        <li><a class="ds-douban flat" href="javascript:void(0);" data-service="douban">豆瓣</a></li>
+                      </ul>
+                      <div class="ds-share-icons-more">
+                      </div>
+                    </div>
+                <hr>
+                </div>
+                <!-- 多说 Share end-->
+                
+
+
+                <ul class="pager">
+                    
+                    <li class="previous">
+                        <a href="/huxblog-boilerplate/2019/06/01/EfficientNet/" data-toggle="tooltip" data-placement="top" title="Rethinking Model Scaling for Convolutional Neural Networks">&larr; Previous Post</a>
+                    </li>
+                    
+                    
+                </ul>
+
+
+                
+                <!-- 多说评论框 start -->
+                <div class="comment">
+                    <div class="ds-thread"
+                        data-thread-key="/2019/06/03/Linux-Command-Line"
+                        data-title="Linux Command Line"
+                        data-url="http://localhost:4000/huxblog-boilerplate/2019/06/03/Linux-Command-Line/" >
+                    </div>
+                </div>
+                <!-- 多说评论框 end -->
+                
+
+                
+
+            </div>
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+                <section>
+                    <hr class="hidden-sm hidden-xs">
+                    <h5><a href="/tags/">FEATURED TAGS</a></h5>
+                    <div class="tags">
+        				
+                            
+        				
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Deep Learning" title="Deep Learning" rel="2">
+                                    Deep Learning
+                                </a>
+                            
+        				
+                            
+                				<a href="/huxblog-boilerplate/tags/#Machine Learning" title="Machine Learning" rel="2">
+                                    Machine Learning
+                                </a>
+                            
+        				
+                            
+        				
+                            
+        				
+                            
+        				
+        			</div>
+                </section>
+                
+
+                <!-- Friends Blog -->
+                
+                <hr>
+                <h5>FRIENDS</h5>
+                <ul class="list-inline">
+                    
+                        <li><a href="http://huangxuan.me">Hux Blog</a></li>
+                    
+                        <li><a href="#">Foo</a></li>
+                    
+                        <li><a href="#">Bar</a></li>
+                    
+                        <li><a href="#">Example Friends</a></li>
+                    
+                        <li><a href="#">It helps SEO</a></li>
+                    
+                </ul>
+                
+            </div>
+        </div>
+    </div>
+</article>
+
+
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    // dynamic User by Hux
+    var _user = 'huxblog';
+
+    // duoshuo comment query.
+    var duoshuoQuery = {short_name: _user };
+    (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0]
+         || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+</script>
+<!-- 多说公共JS代码 end -->
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+
+    <!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+                    
+
+                    <!-- add Weibo, Zhihu by Hux, add target = "_blank" to <a> by Hux -->
+                    
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="http://weibo.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+
+
+                    
+                    <li>
+                        <a target="_blank" href="https://www.facebook.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                    
+                    <li>
+                        <a target="_blank" href="https://github.com/lingkangjie">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
+                    
+                </ul>
+                <p class="copyright text-muted">
+                    Copyright &copy; 笔记集 2019
+                    <br>
+                    Theme by <a href="http://huangxuan.me">Hux</a> |
+                    <iframe
+                        style="margin-left: 2px; margin-bottom:-5px;"
+                        frameborder="0" scrolling="0" width="91px" height="20px"
+                        src="https://ghbtns.com/github-btn.html?user=huxpro&repo=huxpro.github.io&type=star&count=true" >
+                    </iframe>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/huxblog-boilerplate/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="/huxblog-boilerplate/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/huxblog-boilerplate/js/hux-blog.min.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!-- 
+     Because of the native support for backtick-style fenced code blocks 
+     right within the Markdown is landed in Github Pages, 
+     From V1.6, There is no need for Highlight.js, 
+     so Huxblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+<!-- jquery.tagcloud.js -->
+<script>
+    // only load tagcloud.js in tag.html
+    if($('#tag_cloud').length !== 0){
+        async("/js/jquery.tagcloud.js",function(){
+            $.fn.tagcloud.defaults = {
+                //size: {start: 1, end: 1, unit: 'em'},
+                color: {start: '#bbbbee', end: '#0085a1'},
+            };
+            $('#tag_cloud a').tagcloud();
+        })
+    }
+</script>
+
+<!--fastClick.js -->
+<script>
+    async("http://cdn.bootcss.com/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+<script>
+    // dynamic User by Hux
+    var _gaId = 'UA-49627206-1';
+    var _gaDomain = 'huangxuan.me';
+
+    // Originial
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', _gaId, _gaDomain);
+    ga('send', 'pageview');
+</script>
+
+
+
+<!-- Baidu Tongji -->
+
+<script>
+    // dynamic User by Hux
+    var _baId = '4cc1f2d8f3067386cc5cdb626a202900';
+
+    // Originial
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?" + _baId;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+
+
+<!-- Image to hack wechat -->
+<img src="/img/icon_wechat.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
