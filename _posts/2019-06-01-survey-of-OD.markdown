@@ -96,7 +96,7 @@ years: --2001-........--2008---------------2013---2016---2017---2018---2019
   - bounding box aggregation: takes full consideration of object relationships and their spatial layout.
   - learning to NMS: think of NMS as a filter to re-score all raw detections and to train the NMS as part of a network in an end-to-end fashion.
 
-![evolution of non-max suppresion](./imgs/NMS.jpg)
+![evolution of non-max suppresion](/img/NMS.jpg)
 
 - Technical evolution of hard negative mining (HNM). In real scene of object detection, the imbalance between backgrounds and objects could be as extreme as 10<sup>4</sup> ~ 10<sup>5</sup> background windows to every object. HNM aims to deal with the problem of imbalanced data during training.
   - Bootstrap. Bootstrap in object detection refers to a group of training techniques in which the training starts with a small part of background samples and then iteratively add new misclassified backgrounds during the training process.
