@@ -4,7 +4,7 @@ title:      "哲学"
 subtitle:   "儒释道"
 date:       2019-05-26 12:00:00
 author:     "Ling"
-header-img: "img/post-bg-2015.jpg"
+header-img: "img/diamond_sutra.jpg"
 tags:
     - 哲学
 ---
